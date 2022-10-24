@@ -4,7 +4,7 @@ import Profile from "./components/Profile";
 
 function App() {
   return (
-    <div className="w-[90%] flex flex-col m-auto font-body">
+    <div className="w-[90%] md:w-[80%] flex flex-col m-auto font-body">
       <Profile />
       <Links />
       <Footer />
