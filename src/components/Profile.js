@@ -31,7 +31,7 @@ export default function Profile() {
         <button className='absolute top-0 right-0 md:right-24'>
             <img className='md:hidden' src={shareIcon} alt="" />
             <div className='hidden md:flex md:flex-row-reverse gap-2 relative'>
-              <img onMouseEnter={() => toggleToolTip()} onMouseLeave={() => toggleToolTip()}  className='border-2 border-dotted rounded-full p-2 border-[#EAECF0]' src={shareIconWeb} alt="" />
+              <img onMouseEnter={() => toggleToolTip()} onMouseLeave={() => toggleToolTip()}  className='border-2 border-dotted rounded-full p-2 border-[#EAECF0] hover:bg-[#f9fafb]' src={shareIconWeb} alt="" />
               <span className={tooltipHover ? 'tooltip' : 'invisible'}>Share Link</span>
             </div>
         </button>

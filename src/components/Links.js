@@ -42,11 +42,9 @@ export default function Links() {
     <div className="mt-10">
         <ul className="flex flex-col gap-5">
             {links.map((link) => (
-                <button className="bg-[#EAECF0] hover:bg-[#777]/30 rounded-lg text-center text-sm py-6" key={link.key} id={link.id}>
-                    <a target="_blank" rel="noreferrer" href={link.link}>
+                    <a className="link" key={link.key} id={link.id}  target="_blank" rel="noreferrer" href={link.link}>
                         {link.text}
-                    </a>
-                </button>
+                    </a>  
             ))}
         </ul>
 
