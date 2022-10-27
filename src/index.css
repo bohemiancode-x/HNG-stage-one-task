@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@layer components {
+    .tooltip {
+        @apply relative cursor-default bg-black text-white text-center rounded-md w-[120px] p-2 z-[1] after:content-[""] after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[6px] after:rounded-tr-full after:border-l-black after:border-t-transparent after:border-b-transparent after:border-r-transparent;
+    }
+}

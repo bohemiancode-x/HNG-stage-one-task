@@ -6,11 +6,15 @@ import cameraIcon from '../assets/camera-icon.svg'
 
 export default function Profile() {
   const [hover, setHover] = useState(false);
+  const [tooltipHover, setTooltipHover] = useState(false);
 
   const toggleHover = () => {
     setHover(!hover);
     //console.log(hover);
-  }
+  };
+  const toggleToolTip = () => {
+    setTooltipHover(!tooltipHover)
+  };
 
 
 
@@ -23,10 +27,13 @@ export default function Profile() {
          <img className='h-28 w-28 rounded-full' id='profile__img' src={profileImg} alt="" />
         </div>
         <h3 className='font-bold mt-5' id='twitter'>emmie_porsche</h3>
-        <h3 className='hidden' id='slack'>Emmanuel Ayo</h3>
+        <h3 className='hidden' id='slack'>bohemian-x</h3>
         <button className='absolute top-0 right-0 md:right-24'>
             <img className='md:hidden' src={shareIcon} alt="" />
-            <img className='hidden md:block border-2 border-dotted rounded-full p-2 border-[#EAECF0]' src={shareIconWeb} alt="" />
+            <div className='hidden md:flex md:flex-row-reverse gap-2 relative'>
+              <img onMouseEnter={() => toggleToolTip()} onMouseLeave={() => toggleToolTip()}  className='border-2 border-dotted rounded-full p-2 border-[#EAECF0]' src={shareIconWeb} alt="" />
+              <span className={tooltipHover ? 'tooltip' : 'invisible'}>Share Link</span>
+            </div>
         </button>
     </div>
   )

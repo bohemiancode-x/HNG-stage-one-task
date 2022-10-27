@@ -21,7 +21,7 @@ const links = [
         key: 4,
         text: 'Python Books',
         id: 'book__python',
-        link: 'https://books.zuri.team/python-for-beginners?ref_id=<emmanuelayo>'
+        link: 'https://books.zuri.team/python-for-beginners?ref_id=bohemian-x'
     },
     {
         key: 5,
