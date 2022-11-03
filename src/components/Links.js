@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import slackIcon from '../assets/slack.png'
+import githubIcon from '../assets/Icon-git.png';
+
 const links = [
     {
         key: 1,
@@ -46,7 +50,13 @@ export default function Links() {
                         {link.text}
                     </a>  
             ))}
+            <Link to='/contact' id="contact" className="link">Contact</Link>
         </ul>
+
+        <div className='flex gap-5 m-auto items-center justify-center mt-10'>
+            <img className='h-6 w-6' src={slackIcon} alt="slack" />
+            <img className='h-6 w-6' src={githubIcon} alt="git" />
+        </div>
 
     </div>
   )

@@ -11,4 +11,13 @@
     .link {
         @apply bg-[#EAECF0] hover:bg-[#D0D5DD] rounded-lg text-center text-sm py-6 cursor-pointer
     }
+    .input {
+        @apply border-[1px] border-[#d0d5dd] rounded-lg py-2 px-5 text-start focus:outline-none
+    }
+    .label {
+        @apply flex flex-col gap-1 text-[#344054]
+    }
+    .check {
+        @apply appearance-none border-[1px] px-2 justify-center items-center flex cursor-pointer border-[#d0d5dd] rounded h-[20px] w-[20px] hover:shadow-xl hover:border-[#84caff]  checked:before:content-["\2714"] checked:before:text-sm checked:before:text-[#1570ef] checked:border-[#1570ef] checked:before:relative checked:before:right-0 checked:before:bottom-[0]
+    }
 }

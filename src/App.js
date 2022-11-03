@@ -1,13 +1,22 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+//components
 import Footer from "./components/Footer";
-import Links from "./components/Links";
-import Profile from "./components/Profile";
+
+//pages
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <div className="w-[90%] md:w-[80%] flex flex-col m-auto font-body">
-      <Profile />
-      <Links />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
