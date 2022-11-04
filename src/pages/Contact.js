@@ -16,16 +16,13 @@ export default function Contact() {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        // if(Object.keys(formErrors).length === 0 ) {
-        //     setFormValues(initialValues);
-        // }
         setTimeout(() => {
                 setIsSubmit(false)
             }, 2000)
     };
 
     useEffect(() => {
-        Object.keys(formErrors).length === 0 && setFormValues(initialValues);
+        Object.keys(formErrors).length === 0 && setFormValues({firstName: "", lastName: "", email: "", message: "" });
     },[formErrors])
 
     const validate = (values) => {
