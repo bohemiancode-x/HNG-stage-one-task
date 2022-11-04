@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 
 export default function Contact() {
     const initialValues = {firstName: "", lastName: "", email: "", message: "" };
