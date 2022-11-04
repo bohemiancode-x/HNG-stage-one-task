@@ -116,7 +116,7 @@ export default function Contact() {
             </label>
             <label className='relative py-1 flex col-span-2'>
                 <input className='check' type="checkbox" id="check" required/>
-                <span className='pl-3 text-[#475467]'>You agree to providing your data to bohemian-x who may contact you.</span>
+                <span className='pl-3 text-[#475467]'>You agree to providing your data to Emmanuel Adisa who may contact you.</span>
             </label>
             <button className='col-span-2 bg-[#1570ef] py-3 text-white rounded-lg hover:opacity-50' id='btn__submit'>Send message</button>
         </form>
