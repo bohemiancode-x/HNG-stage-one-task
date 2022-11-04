@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Contact() {
     const initialValues = {firstName: "", lastName: "", email: "", message: "" };
@@ -16,13 +16,17 @@ export default function Contact() {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        if(formErrors) {
-            setFormValues(initialValues);
-        }
+        // if(Object.keys(formErrors).length === 0 ) {
+        //     setFormValues(initialValues);
+        // }
         setTimeout(() => {
                 setIsSubmit(false)
             }, 2000)
     };
+
+    useEffect(() => {
+        Object.keys(formErrors).length === 0 && setFormValues(initialValues);
+    },[formErrors])
 
     const validate = (values) => {
         const errors = {};
