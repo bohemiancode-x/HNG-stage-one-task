@@ -5,6 +5,7 @@ export default function Contact() {
     const [formValues, setFormValues] =useState(initialValues);
     const [formErrors, setFormErrors] =useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -20,6 +21,10 @@ export default function Contact() {
                 setIsSubmit(false)
             }, 2000)
     };
+
+    const toggleCheck = () => {
+        setIsChecked(!isChecked);
+    }
 
     useEffect(() => {
         Object.keys(formErrors).length === 0 && setFormValues({firstName: "", lastName: "", email: "", message: "" });
@@ -115,10 +120,10 @@ export default function Contact() {
                 </p>
             </label>
             <label className='relative py-1 flex col-span-2'>
-                <input className='check' type="checkbox" id="check" required/>
+                <input onChange={toggleCheck} className='check' type="checkbox" id="check" required/>
                 <span className='pl-3 text-[#475467]'>You agree to providing your data to Emmanuel Adisa who may contact you.</span>
             </label>
-            <button className='col-span-2 bg-[#1570ef] py-3 text-white rounded-lg hover:opacity-50' id='btn__submit'>Send message</button>
+            <button disabled={isChecked} className='col-span-2 bg-[#1570ef] py-3 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed' id='btn__submit'>Send message</button>
         </form>
         {Object.keys(formErrors).length === 0 && isSubmit ? <div className='mt-5 text-green-500 bg-lime-100 text-sm px-4 rounded-lg py-2 text-center font-bold'>message sent.</div> : null}
     </div>
